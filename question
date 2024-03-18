@@ -1,0 +1,76 @@
+Objective
+Build and host a REST API (Method: POST) that takes in an array and returns the following:
+1. Status
+2. User ID
+3. Email ID
+4. College Roll Number
+5. Array for even numbers
+6. Array for odd numbers
+7. Array for alphabets, converted to uppercase
+Please refer to Annexure (A) for request/response samples
+Preferred Tech Stack
+Node.js / Python / Java
+Hosting
+Any provider of your choice, if you don’t have one already, please use Heroku / Netlify / Vercel/ any other
+provider which supports REST API hosting.
+Logic
+1. Response should always contain your user_id (fullname_dob) in the following format
+a. "user_id": {full_name_ddmmyyyy}
+E.g.: "user_id”: "john_doe_17091999"
+
+2. “is_success” should be returned in the response to mark the status of operation. It can be true / false
+3. Be sure to follow other best practices and handle exceptions gracefully
+4. Method: POST
+5. Route: /bfhl
+a. Example: https://testbfhl.herokuapp.com/bfhl
+Submission
+1. Develop the API in any of the languages mentioned in (II)
+2. Host your API (refer to III)
+3. Share the API endpoint in the form given to you
+Form Link: https://forms.office.com/r/91Y30mFyys
+4. Fastest valid submissions will be considered
+5. The URL that you submit should have the logic specified above in “/bfhl” route
+
+Example A
+Request
+{
+"data": [“a”,”1”,”334”,”4”,”R”]
+}
+Response
+{
+"is_success": true,
+"user_id": "john_doe_17091999", “email” : “john@xyz.com”,
+“roll_number”:”ABCD123”,
+"odd_numbers": [“1”],
+"even_numbers": [“334”,”4”],
+"alphabets": [“A”,”R”]
+}
+Example B
+Request
+{
+"data": [“2”,”4”,”5”,”92”,”b”]
+}
+Response
+{
+"is_success": true,
+"user_id": "john_doe_17091999", “email” : “john@xyz.com”,
+“roll_number”:”ABCD123”,
+"odd_numbers": [”5”],
+
+"even_numbers": [“2”,”4”,”92”],
+"alphabets": [“B”]
+}
+Example C
+Request
+{
+"data": ["A",”ABcD”,”DOE”]
+}
+Response
+{
+"is_success": true,
+"user_id": "john_doe_17091999", “email” : “john@xyz.com”,
+“roll_number”:”ABCD123”,
+"odd_numbers": [],
+"even_numbers": [],
+"alphabets": ["A",”ABCD”,”DOE”]
+}
